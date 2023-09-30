@@ -42,31 +42,47 @@ sortBtn.addEventListener("click", () => {
 function updateToDos(i = 0) {
 
     if (i !== toDos.length) {
-        let toDo = document.createElement("li");
-        toDo.textContent = toDos[i].text;
-        
+        // div to hold complete to-do
+        let toDo = document.createElement("div");
+        toDo.classList.add("todo");
+
+        // span to hold to-do text
+        let toDoText = document.createElement("span");
+        toDoText.textContent = toDos[i].text;
+        toDo.appendChild(toDoText);
+
+        // div to hold complete and delete buttons
+        let toDoBtns = document.createElement("div");
+        toDoBtns.classList.add("todo-btns");
+
         let completeBtn = document.createElement("button");
         completeBtn.innerHTML = "&check;";
-        completeBtn.addEventListener('click', () => {
+        completeBtn.addEventListener("click", () => {
             if (toDos[i].completed) {
                 toDos[i].completed = false;
-                toDo.style.textDecoration = "none";
+                toDoText.style.textDecoration = "none";
             } else {
                 toDos[i].completed = true;
-                toDo.style.textDecoration = "line-through";
+                toDoText.style.textDecoration = "line-through";
             }
         })
+        toDoBtns.appendChild(completeBtn);
+
+        let deleteBtn = document.createElement("button");
+        deleteBtn.innerHTML = "&#10006;";
+        deleteBtn.addEventListener("click", () => {
+            deleteTodo(i);
+        })
+        toDoBtns.appendChild(deleteBtn);
 
         if (toDos[i].completed) {
-            toDo.style.textDecoration = "line-through";
+            toDoText.style.textDecoration = "line-through";
         } else {
-            toDo.style.textDecoration = "none";
+            toDoText.style.textDecoration = "none";
         }
 
-        toDo.appendChild(completeBtn);
-
+        toDo.appendChild(toDoBtns);
         toDoList.appendChild(toDo);
-
         
         updateToDos(i + 1);
     }
@@ -80,7 +96,7 @@ function appendToDo() {
     toDoList.innerHTML = "";
     updateToDos();
     anime({
-        targets: 'li:last-of-type',
+        targets: '.todo:last-of-type',
         opacity: [0, 1],
         translateX: [-600, 0],
         easing: "easeOutExpo",
@@ -89,3 +105,8 @@ function appendToDo() {
     })
 }
 
+function deleteTodo(index) {
+    toDos.splice(index, 1);
+    toDoList.innerHTML = "";
+    updateToDos();
+}

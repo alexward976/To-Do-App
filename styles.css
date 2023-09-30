@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Roboto&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    background: linear-gradient(45deg, #52ACFF 25%, #9b2cff 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    padding: 2rem;
+    background-color: white;
+    width: 25rem;
+    border-radius: 1.5em;
+}
+
+h1 {
+    margin-top: 0;
+    font-family: 'Abril Fatface', serif;
+}
+
+button, .todo, input {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.05rem;
+}
+
+input {
+    border: black 1px solid;
+}
+
+button#add-todo, button#sort-completed, input {
+    padding: .65rem;
+    border-radius: .75em;
+}
+
+button#add-todo, button#sort-completed {
+    color: white;
+    border: none;
+    background: linear-gradient(45deg, #52ACFF 25%, #9b2cff 100%);
+}
+
+#todos {
+    margin: 1.5em 0;
+}
+
+.todo {
+    margin: 1em 0;
+    display: flex;
+    gap: .3em;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.todo-btns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .25em;
+}
+
+.todo-btns button {
+    border: 1px solid black;
+    border-radius: 1em;
+    padding: .3em .55em;
+    background-color: white;
+    color: black;
+}
+
