@@ -37,10 +37,11 @@ input {
 
 button#add-todo, button#sort-completed, input {
     padding: .65rem;
-    border-radius: .75em;
+    border-radius: .5em;
 }
 
 button#add-todo, button#sort-completed {
+    padding: .65rem 1.25rem;
     color: white;
     border: none;
     background: linear-gradient(45deg, #52ACFF 25%, #9b2cff 100%);

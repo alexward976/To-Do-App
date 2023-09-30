@@ -3,9 +3,9 @@ import anime from './node_modules/animejs/lib/anime.es.js';
 anime({
     targets: 'h1',
     opacity: [0, 1],
-    translateY: [-600, 0],
+    translateY: [-150, 0],
     easing: "easeOutExpo",
-    duration: 1400
+    duration: 1600
 })
 
 const toDos = [];
