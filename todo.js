@@ -31,7 +31,7 @@ const toDoList = document.getElementById("todos"); // ul
 const sortBtn = document.getElementById("sort-completed"); //button
 sortBtn.addEventListener("click", () => {
     toDos.sort(function(x, y) {
-        return(x.completed === y.completed)? 0 : x? -1 : 1;
+        return x.completed - y.completed;
     })
     toDoList.innerHTML = "";
     updateToDos();
@@ -67,17 +67,10 @@ function updateToDos(i = 0) {
 
         toDoList.appendChild(toDo);
 
-        anime({
-            targets: 'li',
-            opacity: [0, 1],
-            translateX: [-600, 0],
-            easing: "easeOutExpo",
-            duration: 1000,
-            delay: anime.stagger(140)
-        })
-
+        
         updateToDos(i + 1);
     }
+
 }
 
 function appendToDo() {
@@ -86,5 +79,13 @@ function appendToDo() {
     newToDo.value = "";
     toDoList.innerHTML = "";
     updateToDos();
+    anime({
+        targets: 'li:last-of-type',
+        opacity: [0, 1],
+        translateX: [-600, 0],
+        easing: "easeOutExpo",
+        duration: 1000,
+        delay: anime.stagger(140)
+    })
 }
 
