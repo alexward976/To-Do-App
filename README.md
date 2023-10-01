@@ -1,32 +1,24 @@
 # Overview
 
-{Important! Do not say in this section that this is college assignment. Talk about what you are trying to accomplish as a software engineer to further your learning.}
+This To-Do List web app is exactly that, a to do list. Users can enter in their various tasks, and they will be added to the list. The tasks can then be marked complete (indicated by a strikethrough) or deleted. The list can also be sorted, resulting in incompleted tasks at the top and completed ones at the bottom.
 
-{Provide a description of the software that you wrote to demonstrate the JavaScript language.}
+In creating this simple to-do list, my goal was to stretch myself in my JavaScript knowledge. I gave myself certain requirements, like using a JS library I didn't know. To accomplish this, I used Anime.JS, a tool to do animations in JavaScript. 
 
-{Describe your purpose for writing this software.}
-
-{Provide a link to your YouTube demonstration. It should be a 4-5 minute demo of the software running and a walkthrough of the code. Focus should be on sharing what you learned about the language syntax.}
-
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://youtu.be/bzqWszc_UDg)
 
 # Development Environment
 
-{Describe the tools that you used to develop the software}
+This web app was developed in Visual Studio Code using the Live Server extension. 
 
-{Describe the programming language that you used and any libraries.}
+JavaScript was the primary language used, and the Anime.JS library was imported to create simple animations.
 
 # Useful Websites
 
-{Make a list of websites that you found helpful in this project}
-
-- [Web Site Name](http://url.link.goes.here)
-- [Web Site Name](http://url.link.goes.here)
+- [Google Fonts](https://fonts.google.com/)
+- [Anime.JS](https://animejs.com/)
+- [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
 # Future Work
 
-{Make a list of things that you need to fix, improve, and add in the future.}
-
-- Item 1
-- Item 2
-- Item 3
+- Store the to-do list in session storage, that way it isn't deleted every time the page is reloaded.
+- Sort by date option
